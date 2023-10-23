@@ -1,0 +1,186 @@
+/* Arapey */
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap');
+
+/* Libre Caslon */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+:root {
+
+}
+
+/* bg colors and global margin */
+body
+{
+    background-color: #F8EFE2;
+}
+.lightbg
+{
+    padding-top: 72px;
+}
+.blackbox, .blackbg
+{
+    background-color: black;
+    color: white;
+}
+.content-margin
+{
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* typeface */
+h2, h3, header, header p,.blackbox p
+{
+    font-family: 'Libre Caslon Text', serif;}
+p, .caption, .blackbox .caption
+{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8rem;
+}
+.caption
+{
+    opacity: 50%;
+}
+
+/* global text setting */
+em
+{
+    font-style: italic;
+}
+sup
+{
+    vertical-align: super;
+    font-size: smaller;
+}
+
+/* header */
+.header-flexbox
+{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    height: 700px;
+    /* height: 1vh;  */
+    justify-content: space-between;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1
+{
+    font-size: 96px;
+    font-style: italic;
+}
+.website
+{
+    font-size: 12px;
+    text-transform: uppercase; 
+    text-align: center;
+    letter-spacing: .2rem;
+    line-height: 1rem;
+}
+.subhead
+{
+    font-size: 32px;
+    margin-top: 20px;
+    margin-top: 67px;
+    line-height: 2.5rem;
+}
+.date
+{
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+
+/* moble font sizes */
+h2
+{
+    font-size: 48px;
+}
+h3
+{
+    font-size: 48px;
+    font-style: italic;
+}
+p
+{
+    font-size: 16px;
+
+}
+.caption, .name
+{
+    font-size: 14px;
+}
+
+/* font sizes */
+@media (min-width: 1000px)
+{
+    h1
+    {
+        font-size: 200px;
+    }
+    h2
+    {
+        font-size: 96px;
+    }
+    h3
+    {
+        font-size: 48px;
+    }
+}
+
+/* paragrpah spacing */
+.regular-text p, .blackbox p
+{
+    margin-top: 20px;
+}
+
+h2, main > p, .regular-text > p
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 40px;
+}
+
+@media (min-width: 1000px)
+{
+    .container
+    {
+        flex-direction: row;
+        gap: 100px;
+    }
+    .blackbox
+    {
+        width: 800px;
+    }
+}
+.regular-text
+{
+    flex-grow: 10;
+}
+
+.blackbox
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-grow: 5;
+}
+.blackbox p
+{
+
+}
