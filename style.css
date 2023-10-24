@@ -18,7 +18,7 @@ body
 {
     background-color: #F8EFE2;
 }
-.lightbg
+.lightbg:first-child
 {
     padding-top: 72px;
 }
@@ -77,6 +77,7 @@ sup
     margin-left: auto;
     margin-right: auto;
 }
+
 h1
 {
     font-size: clamp(96px, 18vw, 200px);
@@ -169,7 +170,7 @@ h1
 
 /* ========== everything else ========== */
 
-/* font sizes */
+/* basic text setting */
 h2
 {
     font-size: 56px;
@@ -205,18 +206,19 @@ p
 }
 
 /* paragrpah spacing */
-.regular-text p, .blackbox p
+.regular-text p:not(:first-child), .blackbox p:not(:first-child)
 {
     margin-top: 20px;
 }
 
 /* margin */
-h2, main > p, .regular-text > p, .example
+h2, main > p, .regular-text > p, .example, .footer
 {
     margin-left: 20px;
     margin-right: 20px;
 }
 
+/* flex box */
 .container
 {
     display: flex;
@@ -240,10 +242,31 @@ h2, main > p, .regular-text > p, .example
         width: 40%;
     }
 }
-.regular-text
+
+.container:nth-child(4), .container:nth-child(5), .blackbg .container
 {
+    align-items: start;
+}
+.blackbg
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
+.blackbg .container
+{
+    margin-top: 20px;
+}
+
+/* ***************** ask about how to fix the line hieght with superscript ******************** */
+.blackbg .regular-text p
+{
+    /* line-height: 40px; */
+}
+
+/* side panel */
 .blackbox
 {
     padding-top: 40px;
@@ -259,10 +282,40 @@ h2, main > p, .regular-text > p, .example
 {
     font-size: 48px;
 }
-
-
-.container:nth-child(4), .container:nth-child(5)
+.caption:not(:last-child)
 {
-    align-items: start;
-    /* color: red; */
+    margin-bottom: 20px;
+}
+
+
+#soap1
+{
+}
+#soap2
+{
+    transform: skew(-12deg, 0);
+}
+#soap3
+{
+    font-style: italic;
+}
+
+
+/* footer */
+.blackbg:last-child 
+{
+    margin-bottom: 0px;
+}
+#footer1
+{
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 32px;
+}
+#footer2
+{
+    font-style: italic;
+}
+#footer3
+{
+
 }
