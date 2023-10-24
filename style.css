@@ -1,15 +1,17 @@
+/* ========== import fonts ========== */
 /* Arapey */
 @import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap');
-
 /* Libre Caslon */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
-
 /* Noto Sans */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
+/* ========== variables ========== */
 :root {
 
 }
+
+/* ========== global settings ========== */
 
 /* bg colors and global margin */
 body
@@ -32,15 +34,18 @@ body
     margin-right: auto;
 }
 
-/* typeface */
+/* typefaces */
+/* serif */
 h2, h3, header, header p,.blackbox p
 {
-    font-family: 'Libre Caslon Text', serif;}
+    font-family: 'Libre Caslon Text', serif;
+}
+/* san-serif */
 p, .caption, .blackbox .caption
 {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 300;
-    line-height: 1.8rem;
+    line-height: 180%;
 }
 .caption
 {
@@ -58,23 +63,33 @@ sup
     font-size: smaller;
 }
 
-/* header */
+/* ========== header ========== */
+
 .header-flexbox
 {
     display: flex;
     padding: 20px;
     flex-direction: column;
-    height: 700px;
-    /* height: 1vh;  */
+    height: 100vh;
     justify-content: space-between;
+    align-items: center;
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
 }
 h1
 {
-    font-size: 96px;
+    font-size: clamp(96px, 18vw, 200px);
     font-style: italic;
+}
+@media (min-width: 1200px)
+{
+    h1
+    {
+        font-size: 200px;
+        text-align: center;
+        margin-top: 72px;
+    }
 }
 .website
 {
@@ -82,49 +97,103 @@ h1
     text-transform: uppercase; 
     text-align: center;
     letter-spacing: .2rem;
-    line-height: 1rem;
+    background-color: #F8EFE2;
+    position: relative;
+    z-index: 10;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.subhead
+.subhead-mobile
 {
     font-size: 32px;
-    margin-top: 20px;
     margin-top: 67px;
-    line-height: 2.5rem;
+    line-height: 150%;
+    max-width: 800px;
 }
-.date
+.subhead-desktop
+{
+    display: none;
+    font-size: 48px;
+    text-align: center;
+    line-height: 150%;
+    background-color: #F8EFE2;
+    position: relative;
+    z-index: 10;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.date-mobile, .date-desktop
 {
     font-size: 14px;
+    font-weight: 700;
     margin-top: 20px;
+}
+.date-desktop
+{
+    text-align: center;
+    margin-bottom: 100px;
+    display: none;
+}
+@media (min-width: 1200px)
+{
+    .date-mobile, .subhead-mobile
+    {
+        display: none;
+    }
+    .date-desktop, .subhead-desktop
+    {
+        display: block;
+    }
+}
+@media (min-width: 1200px) and (min-height: 650px)
+{
+    .nospace
+    {
+        position: relative;
+        height: 0px;
+        z-index: 1;
+    }
+    .box{
+        position: relative;
+        top: 43px;
+        border-style: solid;
+        border-width: 1px;
+        height: 85vh;
+        width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 
-/* moble font sizes */
+/* ========== everything else ========== */
+
+/* font sizes */
 h2
 {
-    font-size: 48px;
+    font-size: 56px;
+    margin-bottom: -50px; 
+}
+h2.not-first
+{
+    margin-top: 120px;
 }
 h3
 {
-    font-size: 48px;
+    font-size: 32px;
     font-style: italic;
 }
 p
 {
     font-size: 16px;
-
 }
 .caption, .name
 {
     font-size: 14px;
 }
-
-/* font sizes */
 @media (min-width: 1000px)
 {
-    h1
-    {
-        font-size: 200px;
-    }
     h2
     {
         font-size: 96px;
@@ -141,7 +210,8 @@ p
     margin-top: 20px;
 }
 
-h2, main > p, .regular-text > p
+/* margin */
+h2, main > p, .regular-text > p, .example
 {
     margin-left: 20px;
     margin-right: 20px;
@@ -151,25 +221,27 @@ h2, main > p, .regular-text > p
 {
     display: flex;
     flex-direction: column;
-    align-items: end;
     gap: 40px;
-}
+    margin-top: 100px;
+    align-items: stretch;
+} 
 
 @media (min-width: 1000px)
 {
     .container
     {
         flex-direction: row;
-        gap: 100px;
+        gap: 50px;
+        align-items: end;
     }
-    .blackbox
+    .blackbox, .example
     {
-        width: 800px;
+        flex-shrink: 0;
+        width: 40%;
     }
 }
 .regular-text
 {
-    flex-grow: 10;
 }
 
 .blackbox
@@ -178,9 +250,19 @@ h2, main > p, .regular-text > p
     padding-bottom: 40px;
     padding-left: 20px;
     padding-right: 20px;
-    flex-grow: 5;
 }
 .blackbox p
 {
+    font-size: 14px;
+}
+.example .example-text
+{
+    font-size: 48px;
+}
 
+
+.container:nth-child(4), .container:nth-child(5)
+{
+    align-items: start;
+    /* color: red; */
 }
