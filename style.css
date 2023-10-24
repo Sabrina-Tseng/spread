@@ -302,6 +302,8 @@ h2, main > p, .regular-text > p, .example, .footer
 
 
 /* footer */
+/* ***************** ask about the extra space below footer ******************** */
+
 .blackbg:last-child 
 {
     margin-bottom: 0px;
@@ -319,3 +321,10 @@ h2, main > p, .regular-text > p, .example, .footer
 {
 
 }
+
+/* todo list 
+no break space
+landing page more top bottom margin
+decoration lines between secitons/examples
+sticky scroll
+style the individual examples */
