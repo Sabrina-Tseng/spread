@@ -109,7 +109,7 @@ sup
 {
     .header-flexbox
     {    
-        height: 100vh;
+        height: 100svh;
     }
 }
 
@@ -226,7 +226,7 @@ h1
 {
 
     .box{
-        height: 80vh;
+        height: 80svh;
     }
 }
 
