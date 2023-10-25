@@ -113,7 +113,7 @@ sup
         height: 100svh;
     }
 }
-@media (min-height: 600px)
+@media (min-height: 670px) and (max-width: 1199px)
 {
     .header-flexbox
     {    
