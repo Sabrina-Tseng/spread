@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 /* Noto Sans */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+/* example fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Pirata+One&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap');
 
 /* ========== variables ========== */
 :root {
@@ -235,6 +237,7 @@ h2, main > p, .regular-text > p, .example, .footer
         flex-direction: row;
         gap: 50px;
         align-items: end;
+
     }
     .blackbox, .example
     {
@@ -242,10 +245,12 @@ h2, main > p, .regular-text > p, .example, .footer
         width: 40%;
     }
 }
+/* ***************** ask about width of blackbox & example ******************** */
 
 .container:nth-child(4), .container:nth-child(5), .blackbg .container
 {
-    align-items: start;
+    /* align-items: start; */
+    align-items: stretch;
 }
 .blackbg
 {
@@ -266,6 +271,12 @@ h2, main > p, .regular-text > p, .example, .footer
     /* line-height: 40px; */
 }
 
+.sticky
+{
+    position: sticky;
+    top: 50px;
+}
+
 /* side panel */
 .blackbox
 {
@@ -281,10 +292,36 @@ h2, main > p, .regular-text > p, .example, .footer
 .example .example-text
 {
     font-size: 48px;
+    line-height: normal;
 }
 .caption:not(:last-child)
 {
     margin-bottom: 20px;
+}
+
+/* example text styles */
+
+.caslon
+{
+    font-family: 'Libre Caslon Text', serif;
+}
+.unifraktur-cook
+{
+    font-family: 'UnifrakturCook', cursive;
+}
+.unifraktur-maguntia
+{
+    font-family: 'UnifrakturMaguntia', cursive;
+}
+.pirata-one
+{
+    font-family: 'Pirata One', serif;
+
+}
+.ibm-plex-serif
+{
+    font-family: 'IBM Plex Serif', serif;
+
 }
 
 
@@ -326,6 +363,5 @@ h2, main > p, .regular-text > p, .example, .footer
 no break space
 landing page more top bottom margin
 decoration lines between secitons/examples
-sticky scroll
 style the individual examples 
 add custom ornament font*/
