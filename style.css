@@ -227,7 +227,14 @@ h2, main > p, .regular-text > p, .example, .footer
     margin-left: 20px;
     margin-right: 20px;
 }
-
+@media (min-width: 1000px)
+{
+    .example
+    {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
 /* flex box */
 .container
 {
@@ -243,21 +250,35 @@ h2, main > p, .regular-text > p, .example, .footer
     .container
     {
         flex-direction: row;
-        gap: 50px;
+        /* gap: 50px; */
         align-items: end;
-
+        justify-content: space-between;
     }
     .blackbox, .example
     {
-        flex-shrink: 0;
+        /* flex-shrink: 0; */
         width: 40%;
     }
+    .regular-text
+    {
+        width: 50%;
+    }
 }
-/* ***************** ask about width of blackbox & example ******************** */
+
+.example
+{
+    max-width: 400px;
+}
+@media (min-width: 1000px)
+{
+    .example
+    {
+        max-width: none;
+    }
+}
 
 .container:nth-child(4), .container:nth-child(5), .blackbg .container
 {
-    /* align-items: start; */
     align-items: stretch;
 }
 .blackbg
