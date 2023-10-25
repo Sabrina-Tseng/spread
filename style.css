@@ -11,29 +11,40 @@
 /* ========== variables ========== */
 :root {
 
+    /* color */
+    --beige: #F8EFE2;
+    --black: black;
+    --white-text-on-black: white;
+
 }
 
 /* ========== global settings ========== */
 
-/* bg colors and global margin */
+/* colors */
 body
 {
-    background-color: #F8EFE2;
-}
-.lightbg:first-child
-{
-    padding-top: 72px;
+    background-color: var(--beige);
 }
 .blackbox, .blackbg
 {
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white-text-on-black);
 }
+.caption
+{
+    opacity: 50%;
+}
+
+/* global margin */
 .content-margin
 {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
+}
+.lightbg:first-child
+{
+    padding-top: 72px;
 }
 
 /* typefaces */
@@ -49,10 +60,6 @@ p, .caption, .blackbox .caption
     font-weight: 300;
     line-height: 180%;
 }
-.caption
-{
-    opacity: 50%;
-}
 
 /* global text setting */
 em
@@ -63,6 +70,7 @@ sup
 {
     vertical-align: super;
     font-size: smaller;
+    line-height: 1;
 }
 
 /* ========== header ========== */
@@ -265,12 +273,6 @@ h2, main > p, .regular-text > p, .example, .footer
     margin-top: 20px;
 }
 
-/* ***************** ask about how to fix the line hieght with superscript ******************** */
-.blackbg .regular-text p
-{
-    /* line-height: 40px; */
-}
-
 .sticky
 {
     position: sticky;
@@ -339,7 +341,6 @@ h2, main > p, .regular-text > p, .example, .footer
 
 
 /* footer */
-/* ***************** ask about the extra space below footer ******************** */
 
 .blackbg:last-child 
 {
