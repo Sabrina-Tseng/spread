@@ -262,6 +262,10 @@ h2.not-first
 {
     margin-top: 120px;
 }
+h2:hover
+{
+    font-style: italic;
+}
 h3
 {
     font-size: 32px;
@@ -482,7 +486,6 @@ h2, main > p, .regular-text > p, .example, .footer
 }
 
 /* todo list 
-no break space
 decoration lines between secitons/examples
 style the individual examples 
 add custom ornament font*/
