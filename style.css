@@ -1,14 +1,15 @@
 /* ========== import fonts ========== */
-/* Arapey */
-@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap');
 /* Libre Caslon */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 /* Noto Sans */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-/* example fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Pirata+One&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap');
 /* ornament font */
 @import url("https://use.typekit.net/ssn3dyb.css");
+/* example fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Pirata+One&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&display=swap');
+
 
 /* ========== variables ========== */
 :root {
@@ -36,6 +37,28 @@ body
     opacity: 50%;
 }
 
+@media print
+{
+    :root {
+        /* color */
+        --beige-bg: white;
+        --black-text: black;
+        --black-bg: white;
+        --white-text: black;
+    }
+    .caption
+    {
+        opacity: 75%;
+    }
+}
+@media (prefers-contrast: more) 
+{
+	:root 
+    {
+        --beige-bg: white;
+	}
+}
+
 /* global margin */
 .content-margin
 {
@@ -50,11 +73,14 @@ body
         max-width: 1080px;
     }
 }
-    
-.lightbg:first-child
+@media print
 {
-    padding-top: 100px;
+    .content-margin
+    {
+        max-width: none;
+    }
 }
+
 
 /* typefaces */
 /* serif */
@@ -80,6 +106,14 @@ sup
     vertical-align: super;
     font-size: smaller;
     line-height: 1;
+}
+u
+{
+    text-decoration: underline;
+}
+b
+{
+    font-weight: 700;
 }
 
 /* ========== header ========== */
@@ -107,14 +141,7 @@ sup
         padding-bottom: 50px;
     }
 }
-@media (min-height: 830px) and (min-width: 1000px)
-{
-    .header-flexbox
-    {    
-        height: 100svh;
-    }
-}
-@media (min-height: 670px) and (max-width: 1199px)
+@media (min-height: 830px) and (min-width: 1000px), (min-height: 670px) and (max-width: 1199px)
 {
     .header-flexbox
     {    
@@ -127,6 +154,7 @@ h1
     font-size: clamp(96px, 18vw, 200px);
     font-style: italic;
     margin-top: 100px; 
+    text-align: center;
 }
 #h1-decor
 {
@@ -136,6 +164,7 @@ h1
         font-style: normal;
         font-size: 100px;
         padding-bottom: 20px;
+        text-align: center;
 }
 
 @media (min-width: 1000px)
@@ -144,18 +173,14 @@ h1
     {
         margin-top: 150px;
         font-size: 200px;
-        text-align: center;
     }
     #h1-decor
     {
-        height: 0px;
-        font-family: "charcuterie-ornaments", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 150px;
-        text-align: center;
+        padding-bottom: 0px;
     }
 }
+
 .website
 {
     font-size: 12px;
@@ -217,6 +242,7 @@ h1
         display: block;
     }
 }
+
 /* box */
 .nospace
 {
@@ -231,7 +257,7 @@ h1
 {
     position: relative;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.5px;
     margin-left: 20px;
     margin-right: 20px;
     z-index: 1;
@@ -251,10 +277,7 @@ h1
     }
     .box{
         top: 80px;
-        border-style: solid;
         border-width: 1px;
-        margin-left: 20px;
-        margin-right: 20px;
         height: 662px;
     }
     .box2{
@@ -277,9 +300,6 @@ h2
 {
     font-size: 56px;
     margin-bottom: -50px; 
-}
-h2.not-first
-{
     margin-top: 120px;
 }
 h2:hover
@@ -295,19 +315,38 @@ p
 {
     font-size: 16px;
 }
-.caption, .name
+.blackbox p:nth-child(2)
 {
     font-size: 14px;
+}
+.caption, .blackbox .name, .blackbox .caption
+{
+    font-size: 14px;
+}
+.example .example-text
+{
+    font-size: 48px;
+    line-height: 1;
 }
 @media (min-width: 1000px)
 {
     h2
-    {
-        font-size: 96px;
-    }
+    {font-size: 96px;}
     h3
+    {font-size: 48px;}
+}
+@media print
+{
+    p
+    {font-size: 14px;}
+    .caption, .blackbox .name, .blackbox .caption
+    {font-size: 10px;}
+    .example .example-text
+    {font-size: 32px;}
+    h2
     {
-        font-size: 48px;
+        margin-bottom: 0; 
+        margin-top: 50px;
     }
 }
 
@@ -342,24 +381,21 @@ h2, main > p, .regular-text > p, .example, .footer
     align-items: stretch;
 } 
 
-@media (min-width: 1000px)
+@media (min-width: 1000px), print
 {
     .container
     {
         flex-direction: row;
-        /* gap: 50px; */
         align-items: end;
         justify-content: space-between;
         gap: 0px;
     }
     .blackbox, .example
     {
-        /* flex-shrink: 0; */
         width: 40%;
     }
     .regular-text
     {
-        /* width: 50%; */
         width: 60%;
     }
     .regular-text p
@@ -367,6 +403,18 @@ h2, main > p, .regular-text > p, .example, .footer
         padding-right: 10%;
     }
 
+}
+@media print
+{
+    .container
+    {
+        margin-top: 50px;
+    }
+    /* .container:nth-child(4)
+    {
+        align-items: start;
+        color:red;
+    } */
 }
 
 .example
@@ -381,6 +429,7 @@ h2, main > p, .regular-text > p, .example, .footer
     }
 }
 
+
 .container:nth-child(4), .container:nth-child(5), .blackbg .container
 {
     align-items: stretch;
@@ -392,6 +441,16 @@ h2, main > p, .regular-text > p, .example, .footer
     padding-bottom: 100px;
     margin-top: 100px;
     margin-bottom: 100px;
+}
+@media print
+{
+    .blackbg
+    {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 }
 
 .blackbg .container
@@ -432,18 +491,20 @@ h2, main > p, .regular-text > p, .example, .footer
     padding-left: 20px;
     padding-right: 20px;
 }
-.blackbox p
-{
-    font-size: 14px;
-}
-.example .example-text
-{
-    font-size: 48px;
-    line-height: normal;
-}
 .caption:not(:last-child)
 {
     margin-bottom: 20px;
+}
+
+@media print
+{
+    .blackbox
+    {
+        /* break-inside: avoid; */
+        border-radius: 0.5px;
+        border-style: solid;
+        border-color: rgb(0 0 0 / 25%);
+    }
 }
 
 /* example text styles */
@@ -470,26 +531,78 @@ h2, main > p, .regular-text > p, .example, .footer
     font-family: 'IBM Plex Serif', serif;
 
 }
-
-
-#soap1
+.vesper-libre
 {
+    font-family: 'Vesper Libre', serif;
+}
+.commissioner
+{
+    font-family: 'Commissioner', sans-serif;
+}
+
+.size32
+{
+    font-size: 32px;
+}
+.letterspacing
+{
+    letter-spacing: 8px;
+}
+
+#soap1,#soap2,#soap3, .example .rotate-text
+{
+    font-weight: 700;
+    font-size: 70px;
 }
 #soap2
 {
-    transform: skew(-12deg, 0);
+    transform: skew(-10deg, 0);
 }
 #soap3
 {
     font-style: italic;
 }
 
+.rotate
+{
+    transform: rotate(10deg);
+    width: fit-content;
+    display: inline-block;
+}
+
+@media print
+{
+    .nobreak
+    {
+        break-inside: avoid;
+    }
+    .example .nobreak:not(:first-child)
+    {
+        margin-top: 20px;
+    }
+}
+
 
 /* footer */
-
-.blackbg:last-child 
+.footer
 {
-    margin-bottom: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--black-text);
+    max-width: 800px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    text-align: center;
+}
+@media (min-width: 1000px)
+{
+    .footer
+    {
+        max-width: 1080px;
+    }
 }
 #footer1
 {
@@ -504,8 +617,17 @@ h2, main > p, .regular-text > p, .example, .footer
 {
 
 }
-
+#footer-decor
+{
+    /* height: 0px; */
+    font-family: "charcuterie-ornaments", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    margin-bottom: -20px;
+    /* padding-bottom: 20px; */
+    text-align: center;
+}
 /* todo list 
 decoration lines between secitons/examples
-style the individual examples 
-add custom ornament font*/
+style the individual examples */
