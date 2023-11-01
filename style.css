@@ -386,20 +386,21 @@ h2, main > p, .regular-text > p, .example, .footer
     {margin-top: 50px;}
 }
 
-.example
-{
-    max-width: 400px;
-}
-@media (min-width: 1000px)
+@media (max-width: 999px)
 {
     .example
-    {max-width: none;}
+    {max-width: 400px;}
 }
 
-
-.container:nth-child(4), .container:nth-child(5), .blackbg .container
+@media (min-width: 1000px)
 {
-    align-items: stretch;
+    .container:nth-child(4), .container:nth-child(5), .blackbg .container
+    {align-items: stretch;}
+}
+@media print
+{
+    .container:nth-child(4), .container:nth-child(5), .blackbg .container
+    {align-items: start;}
 }
 
 .blackbg
@@ -423,6 +424,11 @@ h2, main > p, .regular-text > p, .example, .footer
 .blackbg .container
 {
     margin-top: 20px;
+}
+@media (max-width: 999px)
+{
+    .blackbg .container:nth-child(1), .blackbg .container:nth-child(2)
+    {gap: 20px;}
 }
 
 .sticky
@@ -505,7 +511,7 @@ h2, main > p, .regular-text > p, .example, .footer
 }
 @media (min-width: 1000px)
 {
-    #soap1,#soap2,#soap3
+    #soap1, #soap2, #soap3
     {font-size: 100px;}
 }
 
