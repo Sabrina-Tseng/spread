@@ -503,6 +503,11 @@ h2, main > p, .regular-text > p, .example, .footer
 {
     font-style: italic;
 }
+@media (min-width: 1000px)
+{
+    #soap1,#soap2,#soap3
+    {font-size: 100px;}
+}
 
 .rotate
 {
