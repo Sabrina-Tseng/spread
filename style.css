@@ -515,6 +515,10 @@ h2, main > p, .regular-text > p, .example, .footer
 {
     margin-top: 20px;
 }
+.example .nobreak .caption
+{
+    margin-top: 10px;
+}
 @media print
 {
     .nobreak
