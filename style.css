@@ -12,7 +12,8 @@
 
 
 /* ========== variables ========== */
-:root {
+:root
+{
     /* color */
     --beige-bg: #F8EFE2;
     --black-text: black;
@@ -39,7 +40,8 @@ body
 
 @media print
 {
-    :root {
+    :root 
+    {
         /* color */
         --beige-bg: white;
         --black-text: black;
@@ -47,16 +49,12 @@ body
         --white-text: black;
     }
     .caption
-    {
-        opacity: 75%;
-    }
+    {opacity: 75%;}
 }
 @media (prefers-contrast: more) 
 {
 	:root 
-    {
-        --beige-bg: white;
-	}
+    {--beige-bg: white;}
 }
 
 /* global margin */
@@ -69,18 +67,13 @@ body
 @media (min-width: 1000px)
 {
     .content-margin
-    {
-        max-width: 1080px;
-    }
+    {max-width: 1080px;}
 }
 @media print
 {
     .content-margin
-    {
-        max-width: none;
-    }
+    {max-width: none;}
 }
-
 
 /* typefaces */
 /* serif */
@@ -96,11 +89,9 @@ p, .caption, .blackbox .caption
     line-height: 180%;
 }
 
-/* global text setting */
+/* default text setting */
 em
-{
-    font-style: italic;
-}
+{font-style: italic;}
 sup
 {
     vertical-align: super;
@@ -108,16 +99,14 @@ sup
     line-height: 1;
 }
 u
-{
-    text-decoration: underline;
-}
+{text-decoration: underline;}
 b
-{
-    font-weight: 700;
-}
+{font-weight: 700;}
+
 
 /* ========== header ========== */
 
+/* header flexbox size */
 .header-flexbox
 {
     display: flex;
@@ -144,11 +133,10 @@ b
 @media (min-height: 830px) and (min-width: 1000px), (min-height: 670px) and (max-width: 1199px)
 {
     .header-flexbox
-    {    
-        height: 100svh;
-    }
+    {height: 100svh;}
 }
 
+/* header text setting */
 h1
 {
     font-size: clamp(96px, 18vw, 200px);
@@ -158,15 +146,14 @@ h1
 }
 #h1-decor
 {
-        height: 0px;
-        font-family: "charcuterie-ornaments", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 100px;
-        padding-bottom: 20px;
-        text-align: center;
+    height: 0px;
+    font-family: "charcuterie-ornaments", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+    padding-bottom: 20px;
+    text-align: center;
 }
-
 @media (min-width: 1000px)
 {
     h1
@@ -209,6 +196,7 @@ h1
 }
 @media (min-width: 1000px)
 {
+    /* cover the box */
     .website, .subhead-desktop
     {
         background-color: var(--beige-bg);
@@ -234,13 +222,9 @@ h1
 @media (min-width: 1000px)
 {
     .date-mobile, .subhead-mobile
-    {
-        display: none;
-    }
+    {display: none;}
     .date-desktop, .subhead-desktop
-    {
-        display: block;
-    }
+    {display: block;}
 }
 
 /* box */
@@ -266,29 +250,27 @@ h1
 {
     top: 50px;
 }
-.box2{
+.box2
+{
     bottom: 30px;
 }
 @media (min-width: 1000px)
 {
     .nospace
+    {max-width: 1400px;}
+    .box
     {
-        max-width: 1400px;
-    }
-    .box{
         top: 80px;
         border-width: 1px;
         height: 662px;
     }
-    .box2{
-        display: none;
-    }
+    .box2
+    {display: none;}
 }
 @media (min-width: 1000px) and (min-height: 830px)
 {
-    .box{
-        height: 80svh;
-    }
+    .box
+    {height: 80svh;}
 }
 
 
@@ -392,30 +374,16 @@ h2, main > p, .regular-text > p, .example, .footer
         gap: 0px;
     }
     .blackbox, .example
-    {
-        width: 40%;
-    }
+    {width: 40%;}
     .regular-text
-    {
-        width: 60%;
-    }
-    .regular-text p
-    {
-        padding-right: 10%;
-    }
-
+    {width: 60%;}
+    .regular-text p /* gap */
+    {padding-right: 10%;}
 }
 @media print
 {
     .container
-    {
-        margin-top: 50px;
-    }
-    /* .container:nth-child(4)
-    {
-        align-items: start;
-        color:red;
-    } */
+    {margin-top: 50px;}
 }
 
 .example
@@ -425,9 +393,7 @@ h2, main > p, .regular-text > p, .example, .footer
 @media (min-width: 1000px)
 {
     .example
-    {
-        max-width: none;
-    }
+    {max-width: none;}
 }
 
 
@@ -473,16 +439,10 @@ h2, main > p, .regular-text > p, .example, .footer
         padding-bottom: 20px;
     }
     .lightbg.bottom-line
-    {
-        border-bottom-color: var(--black-text);
-
-    }
+    {border-bottom-color: var(--black-text);}
     .blackbg.bottom-line
-    {
-        border-bottom-color: var(--white-text);
-    }
+    {border-bottom-color: var(--white-text);}
 }
-
 
 /* side panel */
 .blackbox
@@ -509,45 +469,26 @@ h2, main > p, .regular-text > p, .example, .footer
 
 /* example text styles */
 
+/* fonts */
 .caslon
-{
-    font-family: 'Libre Caslon Text', serif;
-}
+{font-family: 'Libre Caslon Text', serif;}
 .unifraktur-cook
-{
-    font-family: 'UnifrakturCook', cursive;
-}
+{font-family: 'UnifrakturCook', cursive;}
 .unifraktur-maguntia
-{
-    font-family: 'UnifrakturMaguntia', cursive;
-}
+{font-family: 'UnifrakturMaguntia', cursive;}
 .pirata-one
-{
-    font-family: 'Pirata One', serif;
-
-}
+{font-family: 'Pirata One', serif;}
 .ibm-plex-serif
-{
-    font-family: 'IBM Plex Serif', serif;
-
-}
+{font-family: 'IBM Plex Serif', serif;}
 .vesper-libre
-{
-    font-family: 'Vesper Libre', serif;
-}
+{font-family: 'Vesper Libre', serif;}
 .commissioner
-{
-    font-family: 'Commissioner', sans-serif;
-}
+{font-family: 'Commissioner', sans-serif;}
 
 .size32
-{
-    font-size: 32px;
-}
+{font-size: 32px;}
 .letterspacing
-{
-    letter-spacing: 8px;
-}
+{letter-spacing: 8px;}
 
 #soap1,#soap2,#soap3, .example .rotate-text
 {
@@ -609,21 +550,12 @@ h2, main > p, .regular-text > p, .example, .footer
 {
     font-style: italic;
 }
-#footer3
-{
-
-}
 #footer-decor
 {
-    /* height: 0px; */
     font-family: "charcuterie-ornaments", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
     margin-bottom: -20px;
-    /* padding-bottom: 20px; */
     text-align: center;
 }
-/* todo list 
-decoration lines between secitons/examples
-style the individual examples */
