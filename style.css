@@ -347,6 +347,7 @@ p
     {
         margin-bottom: 0; 
         margin-top: 50px;
+        break-after: avoid-page;
     }
 }
 
@@ -500,7 +501,6 @@ h2, main > p, .regular-text > p, .example, .footer
 {
     .blackbox
     {
-        /* break-inside: avoid; */
         border-radius: 0.5px;
         border-style: solid;
         border-color: rgb(0 0 0 / 25%);
@@ -577,9 +577,7 @@ h2, main > p, .regular-text > p, .example, .footer
 @media print
 {
     .nobreak
-    {
-        break-inside: avoid;
-    }
+    {break-inside: avoid;}
 }
 
 
@@ -600,9 +598,7 @@ h2, main > p, .regular-text > p, .example, .footer
 @media (min-width: 1000px)
 {
     .footer
-    {
-        max-width: 1080px;
-    }
+    {max-width: 1080px;}
 }
 #footer1
 {
